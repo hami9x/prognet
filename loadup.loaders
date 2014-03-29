@@ -1,0 +1,3 @@
+hotreloader -p=gopherjs -a="build -o=public/app/app.js"
+fresh
+sass --watch "public/app/styles"
