@@ -3,7 +3,8 @@ prognet
 
 Anti-js js Golang programmer network web code
 
-Installing:  
+Installing:
+go get github.com/gopherjs/gopherjs
 go get github.com/phaikawl/prognet  
 go get github.com/gopherjs/go-angularjs  
 ignore the errors  
