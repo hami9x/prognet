@@ -6,7 +6,7 @@ Anti-js js Golang programmer network web code
 Installing:  
 go get github.com/phaikawl/prognet  
 Ignore the errors  
-cd to $GOPATH/src/gopherjs/go-angularjs 
+cd to $GOPATH/src/gopherjs/go-angularjs  
 git remote add pk https://github.com/phaikawl/go-angularjs.git  
 git pull pk master  
 go to $GOPATH/src/github.com/phaikawl/prognet/public  
