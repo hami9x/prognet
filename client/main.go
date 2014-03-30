@@ -1,9 +1,6 @@
 package main
 
-import (
-	ng "github.com/gopherjs/go-angularjs"
-	jscon "honnef.co/go/js/console"
-)
+import ng "github.com/gopherjs/go-angularjs"
 
 func main() {
 	app := ng.NewModule("publicApp", []string{
@@ -12,15 +9,14 @@ func main() {
 		"ngSanitize",
 		"ngRoute",
 	})
-	mainCtrl := app.NewController("MainCtrl")
-	app.Config(func(r ng.RouteProvider) {
-		r.When("/", ng.RouteConfig{
-			TemplateUrl: "views/main.html",
-			Controller:  "MainCtrl",
-		}).
-			Otherwise(ng.RouteConfig{
-			RedirectTo: "/",
-		})
-	}, "$routeProvider")
-	jscon.Log("Hello from gopherjs")
+	app.NewController("MainCtrl", func(scope *ng.Scope) {
+		scope.Set("awesomeThings", []string{"fuck", "eat"})
+	})
+	app.Config(func(services *ng.Injector) {
+		ng.RouteProvider(services).When("/", ng.Options(
+			ng.Route.Controller("MainCtrl"),
+			ng.Route.TemplatePath("views/main.html"),
+		))
+	}, ng.Inject("$routeProvider"))
+	println("Hello from gopherjs")
 }
