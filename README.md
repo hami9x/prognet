@@ -23,3 +23,5 @@ run `fresh`
 make a new terminal tab  
 cd to `client`  
 run `hotreloader -p=gopherjs -a="build -o ../public/app/scripts/app.js"`  
+
+the site is usually on http://localhost:3000
