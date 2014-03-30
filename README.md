@@ -7,10 +7,10 @@ Installing:
 go get github.com/phaikawl/prognet  
 go get github.com/gopherjs/go-angularjs  
 ignore the errors  
-cd to $GOPATH/src/github.com/gopherjs/go-angularjs  
+cd $GOPATH/src/github.com/gopherjs/go-angularjs  
 git remote add pk https://github.com/phaikawl/go-angularjs.git  
 git pull pk master  
-go to $GOPATH/src/github.com/phaikawl/prognet/public  
+cd $GOPATH/src/github.com/phaikawl/prognet/public  
 run grunt   
 go get github.com/phaikawl/hotreloader  
 go get github.com/pilu/fresh  
@@ -23,7 +23,7 @@ in the directory:
 delete `public/app/scripts/app.js` to be sure that it doesn't work if it doesn't work  
 run `fresh`  
 make a new terminal tab  
-cd to `client`  
+cd `client`  
 run `hotreloader -p=gopherjs -a="build -o ../public/app/scripts/app.js"`  
 
 the site is usually on http://localhost:3000
