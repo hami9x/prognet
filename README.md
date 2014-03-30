@@ -19,7 +19,7 @@ git pull pk master
 
 Running:  
 in the directory:  
-delete `public/app/scripts/app.js` to be sure that it doesn't work if it doesn't work
+delete `public/app/scripts/app.js` to be sure that it doesn't work if it doesn't work  
 run `fresh`  
 make a new terminal tab  
 cd to `client`  
