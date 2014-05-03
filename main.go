@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/codegangsta/martini"
@@ -112,6 +113,23 @@ func main() {
 	g.InitDb()
 
 	m.Use(martini.Static("public/app"))
+	m.Use(func(resp http.ResponseWriter, req *http.Request) {
+		if strings.HasPrefix(req.URL.Path, "/api/") {
+			token := req.Header.Get("AuthToken")
+			if token != "" {
+				n, err := g.Db().SelectInt(`select count(*) from users where token=$1`, token)
+				if err != nil && err != sql.ErrNoRows {
+					log.Fatalf(err.Error())
+				}
+				if n > 0 {
+					return
+				}
+			}
+
+			resp.WriteHeader(http.StatusUnauthorized)
+			resp.Write([]byte("You're not allowed to do this, sorry."))
+		}
+	})
 
 	m.Get("/", func(r http.ResponseWriter) {
 		t, err := template.ParseFiles("public/app/index.html")
@@ -136,5 +154,10 @@ func main() {
 		checkErr(err)
 		r.Write(resp)
 	})
+
+	m.Get("/api/test", func(r http.ResponseWriter) {
+		r.Write([]byte("CLGT"))
+	})
+
 	m.Run()
 }

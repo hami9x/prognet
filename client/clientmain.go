@@ -56,7 +56,7 @@ func InitLocalStorage() *LocalStorage {
 func (ls *LocalStorage) Get(key string) (v string, ok bool) {
 	jsv := ls.Object.Call("getItem", key)
 	ok = !jsv.IsNull()
-	v = jsv.String()
+	v = jsv.Str()
 	return
 }
 
@@ -82,6 +82,9 @@ func main() {
 		http.Get(serverUrl("/auth")).Success(func(user biz.User, status int) {
 			gSiteData.SetUser(user)
 		})
+		http.Get(serverUrl("/api/test")).Success(func(user biz.User, status int) {
+			println("FUCK")
+		})
 	})
 
 	app.Config(func(r *ng.RouteProvider) {
@@ -98,15 +101,12 @@ func main() {
 	ng.AddHttpInterceptor(app, "authInterceptor", func(q *ng.QProvider, rootScope *ng.RootScope) ng.HttpInterceptor {
 		return ng.HttpInterceptor{
 			OnRequest: func(c *ng.ReqSpec) {
-				println(c)
 				token := gSiteData.User().Token
 				if token != "" {
 					c.Headers.Value["AuthToken"] = token
 				}
-				println("intercept it, yay!")
 			},
 			OnResponse: func(j js.Object) interface{} {
-				println(j)
 				return q.NowOrLater(j)
 			},
 		}
