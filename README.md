@@ -1,29 +1,36 @@
 prognet
 =======
 
-Anti-js js Golang programmer network web code
+Anti-js js Golang programmer network web code.  
+This project is developed alongside Go-AngularJs as a glorious dogfood eater.  
 
-Installing:
-go get github.com/gopherjs/gopherjs  
-go get github.com/gopherjs/go-angularjs  
-go get github.com/phaikawl/prognet  
-cd $GOPATH/src/github.com/gopherjs/go-angularjs  
-git remote add pk https://github.com/phaikawl/go-angularjs.git  
-git pull pk master  
-cd $GOPATH/src/github.com/phaikawl/prognet/public  
-run grunt   
-go get github.com/phaikawl/hotreloader  
-go get github.com/pilu/fresh  
-cd $GOPATH/src/github.com/pilu/fresh  
-git remote add pk https://github.com/phaikawl/fresh.git  
-git pull pk master  
+##Installing:
+    
+    go get github.com/gopherjs/gopherjs  
+    go get github.com/gopherjs/go-angularjs  
+    go get github.com/phaikawl/prognet/client
+    go get github.com/phaikawl/prognet
+    go get github.com/pilu/fresh
+    cd $GOPATH/src/github.com/pilu/fresh  
+    git remote add pk https://github.com/phaikawl/fresh.git  
+    git pull pk master  
+    go build && go install  
+  
 
-Running:  
-in the directory:  
-delete `public/app/scripts/app.js` to be sure that it doesn't work if it doesn't work  
-run `fresh`  
-make a new terminal tab  
-cd `client`  
-run `hotreloader -p=gopherjs -a="build -o ../public/app/scripts/app.js"`  
-
+##Running:  
+cd to the `client` directory:
+    
+    gopherjs build -o="../public/app/scripts/app.js"
+`cd ..` to the project directory, run:
+    
+    fresh
 the site is usually on http://localhost:3000
+
+##Developing:  
+Install [sass](http://sass-lang.com/install)  
+Run  
+    ./start
+It starts `fresh` and all the automatic compilers (including gopherjs and sass).  
+
+##Interested?  
+Your help needded, contact me at phaikawl[at]gmail[dot]com to join the team.
