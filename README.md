@@ -39,7 +39,7 @@ Then switch to another terminal, run
 It starts all the automatic compilers (including gopherjs and sass).  
 
 ##Note  
-Sometimes fresh dies for some stupid reason, just kill it and rerun.  
+Sometimes `fresh` dies for some stupid reason, just kill it and rerun.  
 
 ##Interested?  
 Your help is needed, contact me at phaikawl[at]gmail[dot]com to join the team.
