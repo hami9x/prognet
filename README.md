@@ -34,4 +34,4 @@ Run
 It starts `fresh` and all the automatic compilers (including gopherjs and sass).  
 
 ##Interested?  
-Your help needded, contact me at phaikawl[at]gmail[dot]com to join the team.
+Your help is needed, contact me at phaikawl[at]gmail[dot]com to join the team.
