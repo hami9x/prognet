@@ -29,7 +29,7 @@ the site is usually on http://localhost:3000
 ##Developing:  
 Install [sass](http://sass-lang.com/install)  
 In the directory,
-Run
+run
 
     fresh
 Then run
