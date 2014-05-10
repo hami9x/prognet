@@ -1,0 +1,3 @@
+killall gopherjs
+killall sass
+killall fresh

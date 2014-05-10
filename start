@@ -1,0 +1,5 @@
+sass -I public/app/bower_components --watch "public/app/styles" &
+cd client
+gopherjs build -o="../public/app/scripts/app.js" -w=true &
+cd ../
+fresh

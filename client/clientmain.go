@@ -82,9 +82,6 @@ func main() {
 		http.Get(serverUrl("/auth")).Success(func(user biz.User, status int) {
 			gSiteData.SetUser(user)
 		})
-		http.Get(serverUrl("/api/test")).Success(func(user biz.User, status int) {
-			println("FUCK")
-		})
 	})
 
 	app.Config(func(r *ng.RouteProvider) {
