@@ -79,9 +79,13 @@ func main() {
 		scope.Set("user", gSiteData.User())
 	})
 	app.NewController("UserCtrl", func(scope *ng.Scope, http *ng.HttpService) {
-		http.Get(serverUrl("/auth")).Success(func(user biz.User, status int) {
-			gSiteData.SetUser(user)
-		})
+		user := gSiteData.User()
+		if user == nil {
+			http.Get(serverUrl("/auth")).Success(func(user biz.User, status int) {
+				gSiteData.SetUser(user)
+			})
+		}
+		scope.Set("username", user.Username)
 	})
 
 	app.Config(func(r *ng.RouteProvider) {
