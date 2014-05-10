@@ -28,10 +28,14 @@ the site is usually on http://localhost:3000
 
 ##Developing:  
 Install [sass](http://sass-lang.com/install)  
+In the directory,
 Run
+
+    fresh
+Then run
     
     ./start
-It starts `fresh` and all the automatic compilers (including gopherjs and sass).  
+It starts all the automatic compilers (including gopherjs and sass).  
 
 ##Interested?  
 Your help is needed, contact me at phaikawl[at]gmail[dot]com to join the team.
