@@ -24,6 +24,7 @@ cd to the `client` directory:
 `cd ..` to the project directory, run:
     
     fresh
+(fresh starts, runs and automatically recompiles the server side)
 the site is usually on http://localhost:3000
 
 ##Developing:  
@@ -32,10 +33,13 @@ In the directory,
 run
 
     fresh
-Then run
+Then switch to another terminal, run
     
     ./start
 It starts all the automatic compilers (including gopherjs and sass).  
+
+##Note  
+Sometimes fresh dies for some stupid reason, just kill it and rerun.  
 
 ##Interested?  
 Your help is needed, contact me at phaikawl[at]gmail[dot]com to join the team.
